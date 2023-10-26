@@ -1,23 +1,74 @@
-import leave from "public/images/leave.png";
-import tomatoslice from "public/images/tomatoslice.png";
+"use client"; // This is a client component 
+import { motion } from "framer-motion"
+import { useState,useEffect } from "react";
+import { throttle } from 'lodash';
+
+function useVerticalScrollDirection() {
+  const [direction, setDirection] = useState('up');
+  let prevScrollY = 0;
+
+  useEffect(() => {
+      // Using lodash, we set a throttle to the scroll event
+      // making it not fire more than once every 500 ms.
+     
+      const { scrollY } = window;
+
+          // Checks if previous scrollY is less than latest scrollY
+          // If true, we are scrolling downwards, else scrollig upwards
+          const direction = prevScrollY < scrollY ? 'down' : 'up';
+
+          // Updates the previous scroll variable AFTER the direction is set.
+          // The order of events is key to making this work, as assigning
+          // the previous scroll before checking the direction will result
+          // in the direction always being 'up'.
+          prevScrollY = scrollY;
+
+          // Set the state to trigger re-rendering
+          setDirection(direction);
+  }, [scrollY]);
+
+  return direction;
+}
 
 export default function Aboutus() {
+  
+
+ 
+  const [rotation,setRotation] = useState(0);
+  
+  function pressMe()
+  {
+    setRotation(rotation+20);
+    //adds rotation
+
+  }
+    
+   
+   
+  
   return (
     <>
-      <section id="welcome">
-        <div className="flex justify-center items-center flex-col min-h-screen">
-          <h1 className="z-50 font-primary italic text-[64px] font-normal ">
+      <section id="welcome" className="w-full">
+        <div className="flex justify-center mt-[-10rem] items-center flex-col min-h-screen">
+          <h1 className="z-50 font-primary md:text-[64px] text-[32px] italic  font-normal ">
             Welcome to Zippy
           </h1>
-          <h4 className="z-50 text-[32px] font-normal font-sans  w-[600px]">
+          <h4 className="z-50 md:text-[32px] text-[22px] font-normal font-sans md:px-[12rem] px-[2rem]">
             At Zippy, we're passionate about serving delicious food that brings
             joy and satisfaction to our customers.
           </h4>
+          <button className="  bg-[#EB002B] rounded-[25px] h-[35px] w-[70px] text-[#FFF] font-sans " onClick={pressMe} >Login</button>
         </div>
-        <div className="absolute top-4 left-5">
+        <motion.div animate={{
+    x: -52,
+    y: 0,
+    scale: 1,
+    rotate: rotation,
+  }}> <div className="absolute lg:top-4 lg:left-5 top-8 left-2">
           <img src="images/leave.png" alt="" />
-        </div>
-        <div className="absolute top-20 left-80">
+        </div></motion.div>
+       
+        <div className="absolute lg:top-20 lg:left-80 top-8 left-[60%]">
           <img src="images/leave.png" alt="" />
         </div>
         <div className="absolute top-[30rem] left-[10rem]">
@@ -32,10 +83,11 @@ export default function Aboutus() {
         <div className="absolute top-[35rem] right-[25rem]">
           <img src="images/leave.png" alt="" />
         </div>
-        <div className="absolute top-80 left-10">
+        <div className="absolute lg:top-80 lg:left-10 top-10 left-[20%]">
+          //
           <img src="images/tomatoslice.png" alt="" />
         </div>
-        <div className="absolute top-20 left-40">
+        <div className="absolute lg:top-20 lg:left-40 top-20 left-[80%]">
           <img src="images/tomatoslice.png" alt="" />
         </div>
         <div className="absolute top-40 right-10">
@@ -46,15 +98,15 @@ export default function Aboutus() {
         </div>
       </section>
       <section id="ourstory" className="bg-white">
-        <div className="flex justify-center space-x-[23px] items-center w-full p-[40px]">
+        <div className="flex justify-center space-x-[3rem] items-center w-full p-[40px]">
           <img
-            className="h-[600px] w-[500px]"
+            className="md:h-[600px] md:w-[500px] h-[100px] w-[80px]"
             src="images/image-22.png"
             alt=""
           />
-          <div className="font-sans font-normal space-y-[28px]">
-            <h1 className="text-center text-[36px] font-semibold">Our Story</h1>
-            <h2 className="text-left w-[1000px] text-[32px]">
+          <div className="font-sans font-normal space-y-[3rem]">
+            <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">Our Story</h1>
+            <h2 className="text-left  lg:text-[32px] ">
               Our journey began in [Year] when [Founder's Name], a culinary
               enthusiast, decided to share his/her love for mouthwatering fast
               food with the world. Armed with a secret recipe and an unwavering
@@ -67,12 +119,12 @@ export default function Aboutus() {
         </div>
       </section>
       <section id="Our Philosophy" className=" bg-white">
-        <div className="flex justify-center space-x-[23px] items-center w-full p-[40px]">
-          <div className="font-sans font-normal space-y-[28px]">
-            <h1 className="text-center text-[36px] font-semibold">
+        <div className="flex justify-center space-x-[3rem] items-center w-full p-[40px]">
+          <div className="font-sans font-normal space-y-[3rem]">
+            <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">
               Our Philosophy
             </h1>
-            <h2 className="text-left w-[1000px] text-[32px]">
+            <h2 className="text-left  lg:text-[32px]">
               At [Your Fast Food Business Name], we believe that great food
               starts with the finest ingredients. We source our produce and meat
               from local suppliers, ensuring the freshest and most flavorful
@@ -82,7 +134,7 @@ export default function Aboutus() {
             </h2>
           </div>
           <img
-            className="h-[600px] w-[500px]"
+            className="lg:h-[600px] lg:w-[500px] h-[100px] w-[80px]"
             src="images/image-23.png"
             alt=""
           />
@@ -101,9 +153,9 @@ export default function Aboutus() {
         <div className="absolute top-[140rem] right-[25rem]">
           <img src="images/leave.png" alt="" />
         </div>
-        <div className="font-sans justify-center pb-[300px] items-center flex flex-col font-normal space-y-[28px]">
-          <h1 className="text-center text-[36px] font-semibold">Join Us</h1>
-          <h2 className="text-left text-[32px] px-[200px]">
+        <div className="font-sans justify-center pb-[10rem] items-center flex flex-col font-normal space-y-[3rem]">
+          <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">Join Us</h1>
+          <h2 className="text-left lg:text-[32px] lg:px-[20rem] px-[1rem]">
             We're more than just a restaurant; we're a community of food lovers.
             Join us on our culinary adventure and be a part of the [Your Fast
             Food Business Name] family. Follow us on social media to stay

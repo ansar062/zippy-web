@@ -4,6 +4,7 @@ import './globals.css'
 
 import localFont from '@next/font/local'
 
+//define and import fonts there create a local font object 
 const porter = localFont({
   src: [
     {
@@ -40,7 +41,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${porter.variable} font-sans ${friz.variable} font-medium`}>{children}</body>
+      
+      <body className={`${porter.variable} font-sans ${friz.variable}`}>{children}</body>
     </html>
   )
 }
