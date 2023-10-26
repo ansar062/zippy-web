@@ -2,6 +2,30 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+import localFont from '@next/font/local'
+
+const porter = localFont({
+  src: [
+    {
+      path: '../../public/porter-sans-inline-block.otf',
+      weight: '400'
+    }
+    
+  ],
+  variable: '--font-porter'
+})
+
+const friz = localFont({
+  src: [
+    {
+      path: '../../public/Friz-Quadrata-Std-Medium.otf',
+      weight: '400'
+    }
+    
+  ],
+  variable: '--font-friz'
+})
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${porter.variable} font-sans ${friz.variable} font-medium`}>{children}</body>
     </html>
   )
 }
