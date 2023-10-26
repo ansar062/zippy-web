@@ -1,4 +1,5 @@
 import React from 'react'
+import Burger from './3Dburger'
 
 const Hero = () => {
   return (
@@ -20,22 +21,16 @@ const Hero = () => {
         <div className=' shrink-none flex-col md:pt-60 items-end md:pl-20'  >
 
 
-       
+{/*        
           <img className="     " src="images/bun.png" alt="" />
           <img className="  mt-[-10%]  " src="images/cheese.png" alt="" />
           <img className=" mt-[-8%] " src="images/kbab.png" alt="" />
           <img className=" mt-[-5%]  " src="images/tomato.png" alt="" />
           <img className=" mt-[-7%] " src="images/salad.png" alt="" />
-          <img className=" mt-[-8%] " src="images/belowbun.png" alt="" />
+          <img className=" mt-[-8%] " src="images/belowbun.png" alt="" /> */}
 
+          <Burger />
 
-
-        </div>
-
-        <div className='flex-col items-end md:pt-40'>
-          <img className="    " src="images/tomatoslice.png" alt="" />
-          <img className="     " src="images/leave.png" alt="" />
-          <img className="     " src="images/tomatoslice.png" alt="" />
 
 
         </div>
