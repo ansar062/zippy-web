@@ -1,37 +1,69 @@
 "use client"; // This is a client component 
-import { motion } from "framer-motion"
-import { useState,useEffect } from "react";
 
-function useVerticalScrollDirection() {
-  const [direction, setDirection] = useState('up');
-  let prevScrollY = 0;
+
+
+
+import { motion, useTransform, useScroll, useMotionValueEvent } from "framer-motion"
+import { useState,useEffect, useRef } from "react";
+
+
+
+
+const THRESHOLD = 0;
+
+const useScrollDirection = () => {
+  const [scrollDirection, setScrollDirection] = useState('up');
+
+  const blocking = useRef(false);
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
-      // Using lodash, we set a throttle to the scroll event
-      // making it not fire more than once every 500 ms.
-     
-      const { scrollY } = window;
+    prevScrollY.current = window.pageYOffset;
 
-          // Checks if previous scrollY is less than latest scrollY
-          // If true, we are scrolling downwards, else scrollig upwards
-          const direction = prevScrollY < scrollY ? 'down' : 'up';
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
 
-          // Updates the previous scroll variable AFTER the direction is set.
-          // The order of events is key to making this work, as assigning
-          // the previous scroll before checking the direction will result
-          // in the direction always being 'up'.
-          prevScrollY = scrollY;
+      if (Math.abs(scrollY - prevScrollY.current) >= THRESHOLD) {
+        const newScrollDirection = scrollY > prevScrollY.current ? 'down' : 'up';
 
-          // Set the state to trigger re-rendering
-          setDirection(direction);
-  }, [scrollY]);
+        setScrollDirection(newScrollDirection);
 
-  return direction;
-}
+        prevScrollY.current = scrollY > 0 ? scrollY : 0;
+      }
+
+      blocking.current = false;
+    };
+
+    const onScroll = () => {
+      if (!blocking.current) {
+        blocking.current = true;
+        window.requestAnimationFrame(updateScrollDirection);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollDirection]);
+
+  return scrollDirection;
+};
+
+
 
 export default function Aboutus() {
-  
+  const targetRef = useRef(null);
+  const scrollDirection = useScrollDirection();
+   //initial properties
+   const initialScale=.1;
+   const initialRotate=180;
+   const stiffness=10;
+   const duration=7;
+   const finalScale=.3;
 
+  const {scrollYProgress,scrollX,scrollY} = useScroll({ target:targetRef, offset: ['0 1','3 1']})
+  
+ 
  
   const [rotation,setRotation] = useState(0);
   
@@ -39,15 +71,16 @@ export default function Aboutus() {
   {
     setRotation(rotation+20);
     //adds rotation
+  console.log(scrollY)
 
   }
-    
+    const scale= useTransform(scrollYProgress, [.5,1 ], [10, 300]);
    
    
   
   return (
     <>
-      <section id="welcome" className="w-full">
+      <section ref={targetRef}  id="welcome" className="w-full">
         <div className="flex justify-center mt-[-10rem] items-center flex-col min-h-screen">
           <h1 className="z-50 font-primary md:text-[64px] text-[32px] italic  font-normal ">
             Welcome to Zippy
@@ -56,45 +89,45 @@ export default function Aboutus() {
             At Zippy, we're passionate about serving delicious food that brings
             joy and satisfaction to our customers.
           </h4>
-          <button className="  bg-[#EB002B] rounded-[25px] h-[35px] w-[70px] text-[#FFF] font-sans " onClick={pressMe} >Login</button>
+        
         </div>
-        <motion.div animate={{
-    x: -52,
-    y: 0,
-    scale: 1,
-    rotate: rotation,
-  }}> <div className="absolute lg:top-4 lg:left-5 top-8 left-2">
-          <img src="images/leave.png" alt="" />
-        </div></motion.div>
        
-        <div className="absolute lg:top-20 lg:left-80 top-8 left-[60%]">
+        <motion.div  animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute lg:top-4 lg:left-5 top-8 left-2">
           <img src="images/leave.png" alt="" />
-        </div>
-        <div className="absolute top-[30rem] left-[10rem]">
+        </motion.div>
+       
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute lg:top-20 lg:left-80 top-8 left-[60%]">
           <img src="images/leave.png" alt="" />
-        </div>
-        <div className="absolute top-10 right-[10rem]">
+        </motion.div>
+       
+        <motion.div  animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}}className="absolute top-[30rem] left-[10rem]">
           <img src="images/leave.png" alt="" />
-        </div>
-        <div className="absolute top-[30rem] right-[5rem]">
+        </motion.div>
+       
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute top-10 right-[10rem]">
           <img src="images/leave.png" alt="" />
-        </div>
-        <div className="absolute top-[35rem] right-[25rem]">
+        </motion.div>
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute top-[30rem] right-[5rem]">
           <img src="images/leave.png" alt="" />
-        </div>
-        <div className="absolute lg:top-80 lg:left-10 top-10 left-[20%]">
-          //
+        </motion.div>
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute top-[35rem] right-[25rem]">
+          <img src="images/leave.png" alt="" />
+        </motion.div>
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute lg:top-80 lg:left-10 top-10 left-[20%]">
+          
           <img src="images/tomatoslice.png" alt="" />
-        </div>
-        <div className="absolute lg:top-20 lg:left-40 top-20 left-[80%]">
+        </motion.div>
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}}transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute lg:top-20 lg:left-40 top-20 left-[80%]">
           <img src="images/tomatoslice.png" alt="" />
-        </div>
-        <div className="absolute top-40 right-10">
+        </motion.div>
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute top-40 right-10">
           <img src="images/tomatoslice.png" alt="" />
-        </div>
-        <div className="absolute top-80 drop-shadow-2xl right-40">
+        </motion.div>
+        
+
+        <motion.div animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute top-80 drop-shadow-2xl right-40">
           <img src="images/tomatoslice.png" alt="" />
-        </div>
+        </motion.div>
       </section>
       <section id="ourstory" className="bg-white">
         <div className="flex justify-center space-x-[3rem] items-center w-full p-[40px]">
@@ -104,7 +137,7 @@ export default function Aboutus() {
             alt=""
           />
           <div className="font-sans font-normal space-y-[3rem]">
-            <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">Our Story</h1>
+            <h1 className="text-center lg:text-[36px] text-[32px] font-semibold" >Our Story</h1>
             <h2 className="text-left  lg:text-[32px] ">
               Our journey began in [Year] when [Founder's Name], a culinary
               enthusiast, decided to share his/her love for mouthwatering fast
@@ -150,7 +183,7 @@ export default function Aboutus() {
           <img src="images/tomatoslice.png" alt="" />
         </div>
         <div className="absolute top-[140rem] right-[25rem]">
-          <img src="images/leave.png" alt="" />
+          <img  src="images/leave.png" alt="" />
         </div>
         <div className="font-sans justify-center pb-[10rem] items-center flex flex-col font-normal space-y-[3rem]">
           <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">Join Us</h1>

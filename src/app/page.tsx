@@ -11,6 +11,7 @@ export default function Home() {
       <Navbar/>
       {/* <Hero/> */}
       {/* <Burger /> */}
+     <Aboutus/>
       {/* <Aboutus /> */}
       <ContactUs />
     </div>
