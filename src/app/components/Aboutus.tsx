@@ -3,7 +3,7 @@
 
 
 
-import { motion, useTransform, useScroll, useMotionValueEvent } from "framer-motion"
+import { motion, useTransform, useScroll } from "framer-motion"
 import { useState,useEffect, useRef } from "react";
 
 
@@ -51,30 +51,20 @@ const useScrollDirection = () => {
 
 
 
+
+
 export default function Aboutus() {
   const targetRef = useRef(null);
   const scrollDirection = useScrollDirection();
    //initial properties
-   const initialScale=.1;
+   const initialScale=.4;
    const initialRotate=180;
    const stiffness=10;
    const duration=7;
-   const finalScale=.3;
+   const finalScale=.7;
 
   const {scrollYProgress,scrollX,scrollY} = useScroll({ target:targetRef, offset: ['0 1','3 1']})
-  
- 
- 
-  const [rotation,setRotation] = useState(0);
-  
-  function pressMe()
-  {
-    setRotation(rotation+20);
-    //adds rotation
-  console.log(scrollY)
-
-  }
-    const scale= useTransform(scrollYProgress, [0,1 ], [.5, 1]);
+ const scale= useTransform(scrollYProgress, [0,1 ], [.5, 1]);
    
    
   
@@ -92,7 +82,8 @@ export default function Aboutus() {
         
         </div>
        
-        <motion.div  animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute lg:top-4 lg:left-5 top-8 left-2">
+        <motion.div  animate={{rotate: scrollDirection==='up'?0:360,scale:finalScale}} initial={{rotate:scrollDirection==='up'?360:180,  
+        scale:initialScale}} transition={{duration:duration,type:'spring', stiffness: stiffness}} className="absolute lg:top-4 lg:left-5 top-8 left-2">
           <img src="images/leave.png" alt="" />
         </motion.div>
        
