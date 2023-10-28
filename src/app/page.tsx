@@ -13,7 +13,7 @@ export default function Home() {
       {/* <Burger /> */}
      <Aboutus/>
       {/* <Aboutus /> */}
-      <ContactUs />
+     
     </div>
   )
 }
