@@ -13,8 +13,8 @@ export default function Home() {
       <Navbar/>
       {/* <Hero/> */}
       {/* <Burger /> */}
-     
-     <LoginPage/>
+     <SignUpPage/>
+   
       {/* <Aboutus /> */}
      
     </div>
