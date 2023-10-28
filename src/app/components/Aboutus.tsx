@@ -74,7 +74,7 @@ export default function Aboutus() {
   console.log(scrollY)
 
   }
-    const scale= useTransform(scrollYProgress, [.5,1 ], [10, 300]);
+    const scale= useTransform(scrollYProgress, [0,1 ], [.5, 1]);
    
    
   
@@ -129,10 +129,11 @@ export default function Aboutus() {
           <img src="images/tomatoslice.png" alt="" />
         </motion.div>
       </section>
-      <section id="ourstory" className="bg-white">
-        <div className="flex justify-center space-x-[3rem] items-center w-full p-[40px]">
-          <img
-            className="md:h-[600px] md:w-[500px] h-[100px] w-[80px]"
+      <section id="ourstory" className="bg-yellow">
+      
+        <motion.div style={{scale:scale}} className="  backdrop-blur-sm bg-white/40 flex   items-center justify-center  space-x-[3rem] w-[80%]  p-[40px] bg-slate-400 rounded-lg ml-4 mt-4 ">
+        <img
+            className="  h-[400px] w-[400px] "
             src="images/image-22.png"
             alt=""
           />
@@ -148,10 +149,10 @@ export default function Aboutus() {
               dishes, quickly made us a local favorite.
             </h2>
           </div>
-        </div>
+        </motion.div>
       </section>
-      <section id="Our Philosophy" className=" bg-white">
-        <div className="flex justify-center space-x-[3rem] items-center w-full p-[40px]">
+      <section id="Our Philosophy" className=" bg-yellow mt-5">
+        <motion.div  style={{scale:scale}} className="backdrop-blur-sm bg-white/40 ml-[20%] rounded-lg flex  space-x-[3rem] items-center w-[80%] p-[40px]">
           <div className="font-sans font-normal space-y-[3rem]">
             <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">
               Our Philosophy
@@ -170,22 +171,21 @@ export default function Aboutus() {
             src="images/image-23.png"
             alt=""
           />
-          <div className="absolute top-[110rem] left-[10rem]">
+          <div className="absolute top-[40rem] left-[10rem]">
             <img src="images/leave.png" alt="" />
           </div>
-        </div>
+        </motion.div>
       </section>
-      <section id="join us" className=" bg-white ">
-        <div className="absolute top-[160rem] drop-shadow-2xl right-80">
+      <section id="join us" className=" bg-yellow mt-6 pb-10">
+        <motion.div style={{scale:scale}}>
+        <div className="absolute top-[140rem] drop-shadow-2xl right-10">
           <img src="images/tomatoslice.png" alt="" />
         </div>
-        <div className="absolute top-[140rem] drop-shadow-2xl left-10">
+        <div className="absolute top-[110rem] drop-shadow-2xl left-10">
           <img src="images/tomatoslice.png" alt="" />
         </div>
-        <div className="absolute top-[140rem] right-[25rem]">
-          <img  src="images/leave.png" alt="" />
-        </div>
-        <div className="font-sans justify-center pb-[10rem] items-center flex flex-col font-normal space-y-[3rem]">
+       
+        <div className=" backdrop-blur-sm bg-white/40 ml-[5%] rounded-lg w-[75%] h-[50%]font-sans justify-center pb-[3rem] items-center flex flex-col font-normal space-y-[3rem] ">
           <h1 className="text-center lg:text-[36px] text-[32px] font-semibold">Join Us</h1>
           <h2 className="text-left lg:text-[32px] lg:px-[20rem] px-[1rem]">
             We're more than just a restaurant; we're a community of food lovers.
@@ -195,6 +195,7 @@ export default function Aboutus() {
             stories
           </h2>
         </div>
+        </motion.div>
       </section>
     </>
   );
