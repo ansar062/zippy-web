@@ -1,5 +1,7 @@
+"use client"; 
 import React from 'react'
 import Burger from './3Dburger'
+import { motion, useTransform, useScroll } from "framer-motion"
 
 const Hero = () => {
   return (
@@ -8,28 +10,30 @@ const Hero = () => {
 
       <div className='flex-col '>
 
-        <h1 className="text-left  text-[200%] font-primary  italic text-[#FFF] pl-[50%] md:pt-8 ">Finger Lick'in</h1>
+        <h1 className="text-left  text-[220%] font-primary  italic text-[#FFF] pl-[50%] md:pt-4 ">Finger Lick'in</h1>
 
 
-        <div className=' pt-24 flex   text-left '>
-          <h1 className="text-[200%] lg:text-[300%] font-porter text-[#FFF]">Where <br></br> hunger<br></br>meets <br /> happiness<br></br> - your<br></br> go-to <br /> fast food <br /> destination</h1>
+        <div className=' pt-16 flex   text-left '>
+          <h1 className="text-[200%] pl-5 lg:text-[270%] font-porter text-[#FFF]">Where <br></br> hunger<br></br>meets <br /> happiness<br></br> - your<br></br> go-to <br /> fast food <br /> destination</h1>
         </div>
 
       </div>
 
       <div className='flex'>
-        <div className=' shrink-none flex-col md:pt-60 items-end md:pl-20'  >
+        <div className=' shrink-none flex-col md:pt-5 items-end md:pl-20'  >
 
 
-{/*        
-          <img className="     " src="images/bun.png" alt="" />
-          <img className="  mt-[-10%]  " src="images/cheese.png" alt="" />
-          <img className=" mt-[-8%] " src="images/kbab.png" alt="" />
-          <img className=" mt-[-5%]  " src="images/tomato.png" alt="" />
-          <img className=" mt-[-7%] " src="images/salad.png" alt="" />
-          <img className=" mt-[-8%] " src="images/belowbun.png" alt="" /> */}
+    
+          <motion.img animate={{y:-30}} transition={{duration:3}} className="   mt-[15%]  " src="images/bun.png" alt="" />
+          <motion.img animate={{y:-30}} transition={{duration:3}}  className="mb-[-12%] mt-[-7%]" src="images/cheese.png" alt="" />
+          <motion.img    className=" mt-[2%] " src="images/kbab.png" alt="" />
+          <motion.button animate={{opacity:1}} initial={{opacity:0}} transition={{duration:1, delay:2}} className="  bg-[#EB002B] rounded-[40px] w-[80%] h-[14%] md:h-[4vw] md:w-[24vw] text-[#FFF] mt-1 font-primary text-[20px] ml-10 " >Order now</motion.button>
+          <motion.img animate={{y:80,}} transition={{duration:3}}  className=" mt-[-19%]  " src="images/cheesebelow.png" alt="" />
+          <motion.img animate={{y:70}} transition={{duration:3}}  className=" mt-[-6%] ml-[-10%] " src="images/tomato.png" alt="" />
+          <motion.img  animate={{y:90}} transition={{duration:3}}  className=" mt-[-12%] " src="images/salad.png" alt="" />
+          <motion.img animate={{y:90}} transition={{duration:3}}  className=" mt-[-4%] ml-[6%] w-[330px] md:w-[360px]" src="images/belowbun.png" alt="" /> 
 
-          <Burger />
+        
 
 
 
