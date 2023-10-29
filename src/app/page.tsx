@@ -9,12 +9,12 @@ import LoginPage from './components/login'
 
 export default function Home() {
   return (
-    <div className='bg-[#FFD700] min-h-screen pb-10'>
+    <div className='bg-[#FFD700] min-h-screen pb-20'>
       <Navbar/>
       {/* <Hero/> */}
       {/* <Burger /> */}
-     
-     <LoginPage/>
+     <Hero/>
+   
       {/* <Aboutus /> */}
      
     </div>
