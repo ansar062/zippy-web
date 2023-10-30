@@ -1,15 +1,11 @@
 "use client"; // This is a client component 
-
-
-
-
 import { motion, useTransform, useScroll } from "framer-motion"
 import { useState,useEffect, useRef } from "react";
 
 
 
-
 const THRESHOLD = 0;
+
 
 const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState('up');
@@ -48,8 +44,6 @@ const useScrollDirection = () => {
 
   return scrollDirection;
 };
-
-
 
 
 
