@@ -8,6 +8,8 @@ import SignUpPage from './components/signup'
 import LoginPage from './components/login'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
 import OrderCheckOut1 from './components/OrderCheckout/OrderCheckout1'
+import ProductItemCard from './components/Cards/ProductItemCard'
+import ProductsScreen from './components/ProductsScreen/ProductsScreen'
 
 export default function Home() {
   return (
@@ -16,9 +18,11 @@ export default function Home() {
       {/* <Hero/> */}
       {/* <Burger /> */}
      {/* <Hero/> */}
-   <ShoppingCart />
+   {/* <ShoppingCart /> */}
       {/* <Aboutus /> */}
      {/* <OrderCheckOut1 /> */}
+     <ProductsScreen />
+     
     </div>
   )
 }
