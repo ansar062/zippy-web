@@ -16,9 +16,9 @@ export default function Home() {
       {/* <Hero/> */}
       {/* <Burger /> */}
      {/* <Hero/> */}
-   {/* <ShoppingCart /> */}
+   <ShoppingCart />
       {/* <Aboutus /> */}
-     <OrderCheckOut1 />
+     {/* <OrderCheckOut1 /> */}
     </div>
   )
 }
