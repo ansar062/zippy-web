@@ -17,7 +17,7 @@ const Navbar = () => {
         <img className=" w-[63px] h-[57px] mt-[-8px] md:ml-3 " src="logo.png" alt="" />
         <h1 className=' pl-4   text-[40px] font-extrabold font-primary italic '>Zippy</h1></div>
       <ol className="list-none justify-end items-center flex-1 md:flex   text-[20px]   pr-20 hidden ">
-        <li className='pr-5'> <Link href={`prodcuts`}>MENU</Link></li>
+        <li className='pr-5'> <Link href={`prodcuts`}>Menu</Link></li>
         <li className='pr-5'>Cotact</li>
         <li >About</li>
 
