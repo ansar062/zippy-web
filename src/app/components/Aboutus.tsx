@@ -1,50 +1,49 @@
 "use client"; // This is a client component 
 import { motion } from "framer-motion"
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function useVerticalScrollDirection() {
   const [direction, setDirection] = useState('up');
   let prevScrollY = 0;
 
   useEffect(() => {
-      // Using lodash, we set a throttle to the scroll event
-      // making it not fire more than once every 500 ms.
-     
-      const { scrollY } = window;
+    // Using lodash, we set a throttle to the scroll event
+    // making it not fire more than once every 500 ms.
 
-          // Checks if previous scrollY is less than latest scrollY
-          // If true, we are scrolling downwards, else scrollig upwards
-          const direction = prevScrollY < scrollY ? 'down' : 'up';
+    const { scrollY } = window;
 
-          // Updates the previous scroll variable AFTER the direction is set.
-          // The order of events is key to making this work, as assigning
-          // the previous scroll before checking the direction will result
-          // in the direction always being 'up'.
-          prevScrollY = scrollY;
+    // Checks if previous scrollY is less than latest scrollY
+    // If true, we are scrolling downwards, else scrollig upwards
+    const direction = prevScrollY < scrollY ? 'down' : 'up';
 
-          // Set the state to trigger re-rendering
-          setDirection(direction);
+    // Updates the previous scroll variable AFTER the direction is set.
+    // The order of events is key to making this work, as assigning
+    // the previous scroll before checking the direction will result
+    // in the direction always being 'up'.
+    prevScrollY = scrollY;
+
+    // Set the state to trigger re-rendering
+    setDirection(direction);
   }, [scrollY]);
 
   return direction;
 }
 
 export default function Aboutus() {
-  
 
- 
-  const [rotation,setRotation] = useState(0);
-  
-  function pressMe()
-  {
-    setRotation(rotation+20);
+
+
+  const [rotation, setRotation] = useState(0);
+
+  function pressMe() {
+    setRotation(rotation + 20);
     //adds rotation
 
   }
-    
-   
-   
-  
+
+
+
+
   return (
     <>
       <section id="welcome" className="w-full">
@@ -59,14 +58,14 @@ export default function Aboutus() {
           <button className="  bg-[#EB002B] rounded-[25px] h-[35px] w-[70px] text-[#FFF] font-sans " onClick={pressMe} >Login</button>
         </div>
         <motion.div animate={{
-    x: -52,
-    y: 0,
-    scale: 1,
-    rotate: rotation,
-  }}> <div className="absolute lg:top-4 lg:left-5 top-8 left-2">
-          <img src="images/leave.png" alt="" />
-        </div></motion.div>
-       
+          x: -52,
+          y: 0,
+          scale: 1,
+          rotate: rotation,
+        }}> <div className="absolute lg:top-4 lg:left-5 top-8 left-2">
+            <img src="images/leave.png" alt="" />
+          </div></motion.div>
+
         <div className="absolute lg:top-20 lg:left-80 top-8 left-[60%]">
           <img src="images/leave.png" alt="" />
         </div>
