@@ -1,19 +1,8 @@
-import Image from 'next/image'
-import Navbar from './components/navbar'
-import Hero from './components/hero'
-import Aboutus from './components/Aboutus'
-import Burger from './components/3Dburger'
-import ContactUs from './components/ContactUs/Contactus'
-import SignUpPage from './components/signup'
-import LoginPage from './components/login'
-import ShoppingCart from './components/ShoppingCart/ShoppingCart'
-import OrderCheckOut1 from './components/OrderCheckout/OrderCheckout1'
-import ProductItemCard from './components/Cards/ProductItemCard'
-import ProductsScreen from './components/ProductsScreen/ProductsScreen'
+import MenuPage from "./components/menuPage";
 
 export default function Home() {
   return (
-    <div className='bg-[#FFD700] min-h-screen '>
+    <div className=' min-h-screen '>
       {/* <Navbar/> */}
       {/* <Hero/> */}
       {/* <Burger /> */}
@@ -21,7 +10,7 @@ export default function Home() {
    {/* <ShoppingCart /> */}
       {/* <Aboutus /> */}
      {/* <OrderCheckOut1 /> */}
-     <ProductsScreen />
+     <MenuPage />
      
     </div>
   )
