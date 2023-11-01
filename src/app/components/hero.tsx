@@ -5,10 +5,10 @@ import { motion, useTransform, useScroll } from "framer-motion"
 
 const Hero = () => {
   return (
-    <div className=' lg:flex    content-evenly  ' >
+    <div className=' lg:flex    justify-evenly ' >
 
 
-      <div className='flex-col '>
+      <div className='flex-col'>
 
         <h1 className="text-left  text-[220%] font-primary  italic text-[#FFF] pl-[50%] md:pt-4 ">Finger Lick'in</h1>
 
@@ -18,12 +18,19 @@ const Hero = () => {
         </div>
 
       </div>
+   <div>
+      
+   
+          <motion.img animate={{rotate: 360}} transition={{duration:3}} className=" md:absolute mt-[30%]  ml-[-2%] " src="images/leave.png" alt="" />
+          <motion.img animate={{rotate: 360}} transition={{duration:3}} className="   absolute right-[48%] top-[40%]" src="images/tomatoslice.png" alt="" /> 
+          <motion.img animate={{rotate: 360}} transition={{duration:3}} className=" absolute  right-[42%]  " src="images/leave.png" alt="" />
 
-      <div className='flex'>
-        <div className=' shrink-none flex-col md:pt-5 items-end md:pl-20'  >
-
+   </div>
 
     
+        <div className=' shrink-none flex-col md:pt-5 items-end md:pl-20'  >
+
+          
           <motion.img animate={{y:-30}} transition={{duration:3}} className="   mt-[15%]  " src="images/bun.png" alt="" />
           <motion.img animate={{y:-30}} transition={{duration:3}}  className="mb-[-12%] mt-[-7%]" src="images/cheese.png" alt="" />
           <motion.img    className=" mt-[2%] " src="images/kbab.png" alt="" />
@@ -37,8 +44,15 @@ const Hero = () => {
 
 
 
-        </div>
+     
       </div>
+      
+      <div>  <motion.img  animate={{rotate: 360}} transition={{duration:3}} className="   absolute right-[8%] " src="images/leave.png" alt="" />
+      <motion.img animate={{rotate: 360}} transition={{duration:3}} className="   absolute right-[-7%] top-[20%]" src="images/tomatoslice.png" alt="" /> 
+      <motion.img animate={{rotate: 360}} transition={{duration:3}} className="   absolute right-[-6%] top-[50%]" src="images/tomatoslice.png" alt="" />
+      <motion.img animate={{rotate: 360}} transition={{duration:3}} className="   absolute right-[4%] top-[70%]" src="images/leave.png" alt="" />
+      </div>
+      
 
     </div>
   )
