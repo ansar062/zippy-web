@@ -1,12 +1,9 @@
+
 import Aboutus from "./components/Aboutus";
 import ProductItemCard from "./components/Cards/ProductItemCard";
 import Hero from "./components/hero";
 import LoginPage from "./components/login";
-import MenuPage from "./components/menuPage";
-import Navbar from "./components/navbar";
-import SignupPage from "./components/signup";
-import ProductsScreen from "./components/ProductsScreen/ProductsScreen";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+
 export default function Home() {
   return (
     <div className='bg-[#FFD700] min-h-screen '>
@@ -17,9 +14,13 @@ export default function Home() {
    {/* <ShoppingCart /> */}
       {/* <Aboutus /> */}
      {/* <OrderCheckOut1 /> */}
+
      <Navbar/>
      
     <Hero/>
+     {/* <MenuPage /> */}
+     <ProductItemCard imgUrl='/images/beverages.png' name='Name' price='100' desc='DESCRIPTION'/>
+
      
     </div>
   )
