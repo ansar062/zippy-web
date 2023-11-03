@@ -5,7 +5,10 @@ import { motion, useTransform, useScroll } from "framer-motion"
 
 const Hero = () => {
   return (
-    <div className=' md:flex    justify-evenly ' >
+
+
+    <div className=' lg:flex    justify-evenly ' >
+
 
 
       <div className='flex-col'>
