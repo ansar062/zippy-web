@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
 
 
-
-    <nav className="md:pt-3 md:pl-10  lg:ml-[-4%] flex  justify-between items-center   ">
+   <div className=" backdrop-blur-sm bg-white/80 fixed top-0 w-full shadow-md">
+    <nav className="md:pt-3 md:pl-10  lg:ml-[-4%] flex  justify-between sticky items-center   ">
       <div className='pt-2 pr-[20%]  flex'>
         <div className="absolute  md:hidden ml-4 mt-3 ">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" >
@@ -24,6 +24,7 @@ const Navbar = () => {
       </ol>
       <button className="  bg-[#EB002B] rounded-[25px] h-[35px] w-[70px] text-[#FFF] font-sans " >Login</button>
     </nav>
+    </div>
   )
 }
 
