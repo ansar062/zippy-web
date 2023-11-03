@@ -18,16 +18,16 @@ export default function Home() {
       {/* <Hero/> */}
       {/* <Burger /> */}
 
-   {/* <ShoppingCart /> */}
+      {/* <ShoppingCart /> */}
       {/* <Aboutus /> */}
-     {/* <OrderCheckOut1 /> */}
+      {/* <OrderCheckOut1 /> */}
 
-     <Navbar />
-     
-    <Hero/>
-     {/* <MenuPage /> */}
+      <Navbar />
 
-     
+      <Hero />
+      {/* <MenuPage /> */}
+
+
     </div>
   )
 }
