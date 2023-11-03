@@ -1,3 +1,4 @@
+import ProductItemCard from "./components/Cards/ProductItemCard";
 import MenuPage from "./components/menuPage";
 
 export default function Home() {
@@ -10,7 +11,8 @@ export default function Home() {
    {/* <ShoppingCart /> */}
       {/* <Aboutus /> */}
      {/* <OrderCheckOut1 /> */}
-     <MenuPage />
+     {/* <MenuPage /> */}
+     <ProductItemCard imgUrl='/images/beverages.png' name='Name' price='100' desc='DESCRIPTION'/>
      
     </div>
   )
