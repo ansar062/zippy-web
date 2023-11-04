@@ -1,4 +1,3 @@
-
 import Aboutus from "./components/Aboutus";
 import ProductItemCard from "./components/Cards/ProductItemCard";
 import Hero from "./components/hero";
@@ -6,8 +5,6 @@ import Hero from "./components/hero";
 import MenuPage from "./components/menuPage";
 
 import LoginPage from "./components/login";
-import Navbar from "./components/navbar";
-
 
 export default function Home() {
   return (
@@ -22,7 +19,7 @@ export default function Home() {
       {/* <Aboutus /> */}
       {/* <OrderCheckOut1 /> */}
 
-      <Navbar />
+    
 
       <Hero />
       {/* <MenuPage /> */}
