@@ -42,6 +42,24 @@ const Hero = () => {
         />
       </div>
 
+    
+        <div className=' mt-[3%] shrink-none flex-col md:pt-5 items-end md:pl-20'  >
+
+          
+          <motion.img animate={{y:-30}} transition={{duration:3}} className="   mt-[15%]  " src="images/bun.png" alt="" />
+          <motion.img animate={{y:-30}} transition={{duration:3}}  className="mb-[-12%] mt-[-7%]" src="images/cheese.png" alt="" />
+          <motion.img    className=" mt-[2%] " src="images/kbab.png" alt="" />
+          <motion.button animate={{opacity:1}} transition={{delay:2, duration:1}} initial={{opacity:0}}className="mt-2 ml-7 bg-[#EB002B] w-[75%] h-[10%] rounded-[25px] text-[#FFF] font-sans " >Login</motion.button>
+          <motion.img animate={{y:80,}} transition={{duration:3}}  className=" mt-[-19%]  " src="images/cheesebelow.png" alt="" />
+          <motion.img animate={{y:70}} transition={{duration:3}}  className=" mt-[-6%] ml-[-10%] " src="images/tomato.png" alt="" />
+          <motion.img  animate={{y:90}} transition={{duration:3}}  className=" mt-[-12%] " src="images/salad.png" alt="" />
+          <motion.img animate={{y:90}} transition={{duration:3}}  className=" mt-[-4%] ml-[6%] w-[360px] md:w-[360px]" src="images/belowbun.png" alt="" /> 
+
+        
+
+
+
+     
       <div className="mt-[3%] shrink-none flex-col md:pt-5 items-end md:pl-20">
         <motion.img
           animate={{ y: -30 }}
@@ -113,6 +131,7 @@ const Hero = () => {
           alt=""
         />
       </div>
+    </div>
     </div>
   );
 };
