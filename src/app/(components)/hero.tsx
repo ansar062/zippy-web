@@ -42,6 +42,8 @@ const Hero = () => {
         />
       </div>
 
+    
+      
       <div className="mt-[3%] shrink-none flex-col md:pt-5 items-end md:pl-20">
         <motion.img
           animate={{ y: -30 }}
@@ -58,7 +60,7 @@ const Hero = () => {
           alt=""
         />
         <motion.img className=" md:mt-[2%] sm:mt-[4%] mt-[2%]" src="images/kbab.png" alt="" />
-
+        <motion.button animate={{opacity:1}} transition={{delay:2, duration:1}} initial={{opacity:0}}className="mt-2 ml-7 bg-[#EB002B] w-[23rem] h-[5rem] rounded-[25px] text-[#FFF] font-sans " >Order now</motion.button>
         <motion.img
           animate={{ y: 80 }}
           transition={{ duration: 3 }}
@@ -114,6 +116,7 @@ const Hero = () => {
         />
       </div>
     </div>
+ 
   );
 };
 

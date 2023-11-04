@@ -1,17 +1,15 @@
 
-import Aboutus from "./components/Aboutus";
-import ProductItemCard from "./components/Cards/ProductItemCard";
-import Hero from "./components/hero";
+import ProductItemCard from "./(components)/Cards/ProductItemCard";
+import Hero from "./(components)/hero";
 
-import MenuPage from "./components/menuPage";
 
-import LoginPage from "./components/login";
-import Navbar from "./components/navbar";
+import MenuPage from "./(components)/menuPage";
+
 
 
 export default function Home() {
   return (
-    <div className='bg-[#FFD700] min-h-screen '>
+    <div className=' min-h-screen '>
 
       {/* <Navbar/> */}
 
@@ -20,14 +18,12 @@ export default function Home() {
 
       {/* <ShoppingCart /> */}
       {/* <Aboutus /> */}
-      {/* <OrderCheckOut1 /> */}
+     {/* <OrderCheckOut1 /> */}
 
-      <Navbar />
-
-      <Hero />
-      {/* <MenuPage /> */}
-
-
+    <Hero/>
+   
+    
+     
     </div>
   )
 }
