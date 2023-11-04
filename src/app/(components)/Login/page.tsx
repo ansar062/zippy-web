@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
 export default  function LoginPage() {
   
@@ -23,7 +23,7 @@ export default  function LoginPage() {
           <img className=" w-[20%] h-[20%] md:w-[10%] md:h-[10%] " src="images/googleLogo.png" alt="" />
           <img className="w-[20%] h-[20%] md:w-[9%] md:h-[9%] " src="images/appleLogo.png" alt="" />
           </div>
-          <h1 className='text-center pt-[2%]   text-md text-gray-400'>if you don't have any account? <a href='https://www.google.com' className='text-[#EB002B] underline hover:underline-offset-4'>SignUp</a></h1>
+          <h1 className='text-center pt-[2%]   text-md text-gray-400'>if you don't have any account? <a className='text-[#EB002B] underline hover:underline-offset-4'><Link href='/Signup'>Signup</Link></a></h1>
         </div>
         
         <div>

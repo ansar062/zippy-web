@@ -1,7 +1,7 @@
-import Sampledata from "./data";
+import Sampledata from "../data";
 
-import MenuBox from "./Cards/menubox";
-import Navbar from "./navbar";
+import MenuBox from "../Cards/menubox";
+import Navbar from "../navbar";
 
 const MenuPage = () => {
   var menu = Sampledata["menu"];
