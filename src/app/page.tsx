@@ -3,7 +3,7 @@ import ProductItemCard from "./(components)/Cards/ProductItemCard";
 import Hero from "./(components)/hero";
 
 
-import MenuPage from "./(components)/menuPage";
+import MenuPage from "./(components)/MenuPage/page";
 
 
 
