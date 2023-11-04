@@ -1,5 +1,7 @@
 "use client";
 
+import Image from 'next/image';
+
 import { motion } from "framer-motion";
 
 export default function ProductItemCard(props: { imgUrl: String, name: String, desc: String, price: String }) {

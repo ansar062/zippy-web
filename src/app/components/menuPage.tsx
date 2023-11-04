@@ -1,13 +1,12 @@
+import Sampledata from "./data";
 
-import Sampledata from './data'
-
-import MenuBox from './Cards/menubox';
-import Navbar from './navbar'
+import MenuBox from "./Cards/menubox";
+import Navbar from "./navbar";
 
 const MenuPage = () => {
-  var menu = Sampledata['menu'];
-  var bestseller = Sampledata['bestseller'];
-  var topdeals = Sampledata['topdeals'];
+  var menu = Sampledata["menu"];
+  var bestseller = Sampledata["bestseller"];
+  var topdeals = Sampledata["topdeals"];
   return (
     <div className='flex-row mt-[%]' >
    
@@ -37,7 +36,7 @@ menu.map((item, index) =>
 </section>
    
     </div>
-  )
-}
+  );
+};
 
-export default MenuPage
+export default MenuPage;
