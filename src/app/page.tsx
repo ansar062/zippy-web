@@ -6,6 +6,7 @@ import MenuPage from "./components/menuPage";
 
 import LoginPage from "./components/login";
 import Navbar from "./components/navbar";
+import Hero from "./components/hero";
 
 export default function Home() {
   return (
@@ -21,11 +22,9 @@ export default function Home() {
      {/* <OrderCheckOut1 /> */}
 
      <Navbar/>
-     
+     <Hero/>
    
-     {/* <MenuPage /> */}
-     <ProductItemCard imgUrl='/images/beverages.png' name='Name' price='100' desc='DESCRIPTION'/>
-
+    
      
     </div>
   )
