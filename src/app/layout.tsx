@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import localFont from '@next/font/local'
+import Navbar from './(components)/navbar'
 
 //define and import fonts there create a local font object 
 const porter = localFont({
@@ -40,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      
+    <html lang="en" className='bg-[#FFD700]'>
+      <Navbar/>
       <body className={`${porter.variable} font-sans ${friz.variable}`}>{children}</body>
     </html>
   )
