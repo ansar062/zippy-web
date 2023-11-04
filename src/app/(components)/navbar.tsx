@@ -17,12 +17,13 @@ const Navbar = () => {
         <img className=" w-[63px] h-[57px] mt-[-8px] md:ml-3 " src="logo.png" alt="" />
         <h1 className=' pl-4   text-[40px] font-extrabold font-primary italic '>Zippy</h1></div>
       <ol className="list-none justify-end items-center flex-1 md:flex   text-[20px]   pr-20 hidden ">
-        <li className='pr-5'> <Link href={`prodcuts`}>Menu</Link></li>
+        <li className='pr-5'> <Link href='/Aboutus'>Menu</Link></li>
         <li className='pr-5'>Cotact</li>
         <li >About</li>
 
       </ol>
       <button className="  bg-[#EB002B] rounded-[25px] h-[35px] w-[70px] text-[#FFF] font-sans " >Login</button>
+      <img className=" w-[63px] h-[57px] mt-[-8px] md:ml-2 mr-1 " src="images/cartIcon.png"  />
     </nav>
     </div>
   )
