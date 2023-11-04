@@ -63,13 +63,13 @@ export default function Aboutus() {
    
   
   return (
-    <>
-      <section ref={targetRef}  id="welcome" className="w-full">
-        <div className="flex justify-center mt-[-10rem] items-center flex-col min-h-screen">
-          <h1 className="z-50 font-primary md:text-[64px] text-[32px] italic  font-normal ">
+    <div className="">
+      <section ref={targetRef}  id="welcome" className="w-full ">
+        <div className="flex justify-center mt-[-10rem] items-center flex-col min-h-screen ">
+          <h1 className=" font-primary md:text-[64px] text-[32px] italic  font-normal ">
             Welcome to Zippy
           </h1>
-          <h4 className="z-50 md:text-[32px] text-[22px] font-normal font-sans md:px-[12rem] px-[2rem]">
+          <h4 className=" md:text-[32px] text-[22px]  font-normal font-sans md:px-[12rem] px-[2rem]">
             At Zippy, we're passionate about serving delicious food that brings
             joy and satisfaction to our customers.
           </h4>
@@ -182,6 +182,6 @@ export default function Aboutus() {
         </div>
         </motion.div>
       </section>
-    </>
+    </div>
   );
 }
