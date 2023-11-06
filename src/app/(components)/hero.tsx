@@ -5,7 +5,7 @@ import { motion, useTransform, useScroll } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className=" md:flex md:flex-row flex flex-col    justify-evenly ">
+    <div className=" md:flex md:flex-row flex flex-col  bg-[#FFD700]   justify-evenly ">
       <div className="flex-col">
         <h1 className="text-left  text-[220%] font-primary  italic text-[#FFF] pl-[50%] md:pt-4 ">
           Finger Lick'in

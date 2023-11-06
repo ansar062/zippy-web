@@ -5,7 +5,7 @@ export default  function LoginPage() {
 
 
   return (
-    <div  >
+    <div  className="bg-yellow min-h-full min-w-full" >
       <div className={`mx-auto  mt-[18%] md:mt-[8%] bg-white  rounded-lg w-[90%] md:w-[100%] lg:w-[50%] md:h-[70vh] h-[55vh]   `}>
         <h1 className='text-center pt-[5%] font-bold text-lg'>Login</h1>
         <hr className="border-red-500 border-width-1px height-2px mt-[3%] w-[70%] ml-[16%]" />

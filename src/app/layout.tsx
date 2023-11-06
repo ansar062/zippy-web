@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='bg-[#FFD700]'>
+    <html lang="en" className=''>
       <Navbar/>
       <body className={`${porter.variable} font-sans ${friz.variable}`}>{children}</body>
     </html>

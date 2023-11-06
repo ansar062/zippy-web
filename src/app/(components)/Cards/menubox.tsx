@@ -29,7 +29,7 @@ const MenuBox = (props: {
           alt=""
         />
       </div>{" "}
-      <h1 className="pt-1 font-medium">{props.title}</h1>
+      <h1 className="pt-1  font-primary text-center font-bold">{props.title}</h1>
     </RoundBox>
   );
 };

@@ -1,6 +1,6 @@
 export default function ContactUs() {
     return (
-        <div className="bg-white">
+        <div className="bg-[#FFD700] min-h-full min-w-full">
             <section id="welcome">
                 <div className="flex bg-[#EB002B] justify-center items-center">
                     <div className="font-sans font-normal text-white">

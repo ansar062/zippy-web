@@ -63,7 +63,7 @@ export default function Aboutus() {
 
 
   return (
-    <div className="">
+    <div className="bg-[#FFD700] max-h-full max-w-full">
       <section ref={targetRef} id="welcome" className="w-full ">
         <div className="flex justify-center mt-[-10rem] items-center flex-col min-h-screen ">
           <h1 className=" font-primary md:text-[64px] text-[32px] italic  font-normal ">
