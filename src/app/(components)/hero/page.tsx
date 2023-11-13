@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import Burger from "./3Dburger";
+import Burger from "../3Dburger";
 import { motion, useTransform, useScroll } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className=" md:flex md:flex-row flex flex-col    justify-evenly ">
+    <div className=" md:flex md:flex-row mt-[5rem] flex flex-col  bg-[#FFD700]    justify-evenly ">
       <div className="flex-col">
         <h1 className="text-left  text-[220%] font-primary  italic text-[#FFF] pl-[50%] md:pt-4 ">
           Finger Lick'in
@@ -14,9 +15,12 @@ const Hero = () => {
         <div className=" pt-16 flex   text-left ">
           <h1 className="text-[200%] pl-5 lg:text-[270%] font-porter text-[#FFF]">
             Where <br></br> hunger<br></br>meets <br /> happiness<br></br> -
-            your<br></br> go-to <br /> fast food <br /> destination
+           
           </h1>
+         
         </div>
+        <button className="  bg-[#EB002B] rounded-[25px] h-[3rem] w-[8rem] text-[#FFF] font-primary " ><Link href='/'>View Menu</Link></button>
+          <button className=" ml-[1rem] bg-white rounded-[25px] h-[3rem] w-[8rem] text-black font-primary " ><Link href='/'>Book a table</Link></button>
       </div>
       <div className="mt-[5%]">
         <motion.img

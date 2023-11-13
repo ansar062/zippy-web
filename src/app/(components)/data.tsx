@@ -32,13 +32,43 @@ const Sampledata = {
         catagory: 'bestseller',
         title: 'Krunch Burger',
         imageSrc: 'images/kruchburger.png',
-        price: '5$'
+        price: '5',
+        desc:null
       },
       {
         catagory: 'bestseller',
         title: 'Mighty Zinger',
         imageSrc: 'images/mightyZinger.png',
-        price: '5$'
+        price: '10',
+        desc:null
+      },
+      {
+        catagory: 'bestseller',
+        title: 'Krunch Burger',
+        imageSrc: 'images/kruchburger.png',
+        price: '5',
+        desc:null
+      },
+      {
+        catagory: 'bestseller',
+        title: 'Mighty Zinger',
+        imageSrc: 'images/mightyZinger.png',
+        price: '10',
+        desc:null
+      },
+      {
+        catagory: 'bestseller',
+        title: 'Krunch Burger',
+        imageSrc: 'images/kruchburger.png',
+        price: '5',
+        desc:null
+      },
+      {
+        catagory: 'bestseller',
+        title: 'Mighty Zinger',
+        imageSrc: 'images/mightyZinger.png',
+        price: '10',
+        desc:null
       },
 
 
@@ -73,10 +103,9 @@ const Sampledata = {
   {
     catagory: 'topdeals',
     title: 'Deal 4',
-    description: ' 3  Fried chicken+1 Dinner rool+1 regular fries+! twister ',
-    imageSrc: ['deal4.png', 'public/images/twister.png'],
+    description: ' 3  Fried chicken+ 3  Fried chicken+1 Regular fries+1 regular drink+3 Nuggest',
+    imageSrc: ['images/crispychicken.png', 'public/images/friesnjggets.png', 'public/images/beverages.png'],
     price: '5$'
-
 
   },
 

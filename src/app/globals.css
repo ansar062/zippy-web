@@ -4,4 +4,70 @@
 
 * {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  --black: #000000;
+  --ash-black: #222;
+  --white: #fafafa;
+  --sky: #00ccff;
+  --green: #22dddd;
+  --blue: #1300ff;
+  --dusk: #6600ff;
+  --purple: #9900ff;
+  --pink: #ff0066;
+  --red: #fe0222;
+  --orange: #fd7702;
+  --yellow: #FFD700;
+
+  --background: var(--yellow);
+  --accent: var(--black);
+
+  
+
+}
+
+
+#menupage{
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0) 1px,
+    var(--background) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+  background: var(--yellow);
+}
+
+
+
+#navbar {
+  position: fixed;
+  top: 0;
+  
+  
+ 
+ 
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0) 1px,
+    var(--background) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+  font-size: 14px;
+  line-height: 3pxpx;
+}
+
+navbar::before {
+ 
+  
+  position: absolute;
+  
+  
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+
+
+navbar a {
+  text-decoration: none;
+  color: var(--accent);
 }
